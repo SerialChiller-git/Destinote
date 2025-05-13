@@ -1,0 +1,76 @@
+
+.frmContainer {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center; 
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border for glass look */
+    color: #fff;
+}
+
+.frmContainer h2 {
+    font-size: 24px;
+}
+
+.formInput{
+    padding: 10px;
+    margin: 3px 0;
+    border-radius: 4px;
+    width: 100%;
+    
+}
+
+.frm input{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#submitHolder input{
+    border-radius: 10px;
+}
+
+#submitHolder{
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto;
+    width: 250px;
+}
+#b1{
+    margin: 4px;
+    width: 50%;
+    height: 30px;
+}
+
+h1, h2{
+    font-family: 'Lora', serif;
+}
+
+.signup{
+    display: flex;
+    font-size: 14px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup a{
+    color: #ced814;
+    text-decoration: none;
+}
+
+#smalltxt{
+    color: gold;
+}

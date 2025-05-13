@@ -1,0 +1,12 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.appWrapper {
+  min-height: 100vh;
+  color: #f8e1f4;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s ease; /* smooth change */
+}

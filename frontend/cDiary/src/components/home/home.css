@@ -1,0 +1,10 @@
+.headerBar{
+    background-color: #4b0039;
+    color: white;
+    padding: 16px;
+}
+.page{
+    background-image: url("../../assets/deepimg-1746373139511.png");
+    height: 100%;
+    width: 100%    
+}
