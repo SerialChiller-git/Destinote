@@ -60,6 +60,8 @@ async fn main() -> std::io::Result<()>{
             .wrap(cors)
             .service(greet)
             .service(create)
+            .service(get_diary)
+            .service(update_diary)
 
     })
     .bind(format!("{}:{}", conf.server.host, conf.server.port))?

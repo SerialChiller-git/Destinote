@@ -18,6 +18,6 @@ pub struct Diary{
 pub struct Entry{
     pub id : Option<i64>,
     pub diary_id : i64,
-    pub entry : String,
+    pub entry : Option<String>,
     pub time : String,
 }

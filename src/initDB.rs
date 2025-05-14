@@ -62,29 +62,27 @@ pub async fn new_text_entry(pool : &PgPool, diary_id : i64)  {
     
 }
 
-pub async fn get_entry(pool : &PgPool, id: i64) -> String {
+pub async fn get_entry(pool : &PgPool, id: i64) -> Result<String, String> {
     let select_query = r#"
         SELECT entry
         FROM entries
         WHERE id = $1;
     "#;
 
-    let entry : Option<String> = sqlx::query_scalar(select_query)
+    let entry : Option<Option<String>> = sqlx::query_scalar(select_query)
                             .bind(&id)
                             .fetch_optional(pool)
                             .await
-                            .expect("Failed to get entry");
-    match entry {
-        Some(entry) => entry,
-        None => "".to_string(),
-    }
+                            .map_err(|e| format!("Database error: {}", e))?;
+    
+    Ok(entry.flatten().unwrap_or_else(String::new))
 }
 
 pub async fn update_entry(pool : &PgPool, id: i64, text: &String) {
     let update_query = r#"
         UPDATE entries
-        SET entry = $2
-        WHERE id = $1;
+        SET entry = $1
+        WHERE id = $2;
     "#;
 
     sqlx::query(update_query)
